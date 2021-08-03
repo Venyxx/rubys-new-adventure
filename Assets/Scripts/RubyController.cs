@@ -105,7 +105,7 @@ public class RubyController : MonoBehaviour
             else if (hit.collider.tag == "Box")
             {
                 int cubeRandStorage  = cubeRand.Next(1,4);
-                if (cubeRandStorage > 1 )
+                if (cubeRandStorage == 100 )
                 {
                     Debug.Log("ran collision script for cube & the rand was" + cubeRandStorage);
 
@@ -117,7 +117,8 @@ public class RubyController : MonoBehaviour
                 {
                     //spawns crazy ad
                     Debug.Log("crazy ad chosen");
-                    Instantiate (crazyBot);
+                    Instantiate(crazyBot, gameObject.transform.position, gameObject.transform.rotation);
+                    Destroy(resourceCube);
                 }
                
             }
