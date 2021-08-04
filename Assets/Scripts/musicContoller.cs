@@ -21,12 +21,12 @@ public class musicContoller : MonoBehaviour
     {
         if (RubyController.winCondition == 2)
         {
-            Debug.Log("noticed music controller");
-            Destroy(musicalStart);
-            Instantiate(musicalWin);
-            RubyController.winCondition = 0;
             winningDialog.SetActive(true);
-
         }
     }
+    public void PlaySound(AudioClip clip)
+    {
+        
+    }
 }
+
