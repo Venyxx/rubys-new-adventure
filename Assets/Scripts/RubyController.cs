@@ -14,6 +14,7 @@ public class RubyController : MonoBehaviour
 
     public AudioClip throwSound;
     public AudioClip hitSound;
+    public AudioClip winning;
 
     public int health { get { return currentHealth; } }
     int currentHealth;
@@ -28,6 +29,7 @@ public class RubyController : MonoBehaviour
     public static int storing;
     public static int cogCount = 5;
     public TextMeshProUGUI cogCountPrint;
+    public GameObject backgroundm;
     public static int winCondition = 0;
 
 
@@ -100,15 +102,12 @@ public class RubyController : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position + Vector2.up * 0.2f, lookDirection, 1.5f, LayerMask.GetMask("NPC"));
             if (hit.collider.tag == "jambi")
             {
-
                 NonPlayerCharacter character = hit.collider.GetComponent<NonPlayerCharacter>();
                 if (character != null)
                 {
                     Debug.Log("thinks its jambi");
                     character.DisplayDialog();
                 }
-
-
             }
             else if (hit.collider.tag == "Box")
             {
@@ -116,14 +115,12 @@ public class RubyController : MonoBehaviour
                 if (cubeRandStorage > 1)
                 {
                     Debug.Log("ran collision script for cube & the rand was" + cubeRandStorage);
-
                     cubeChecking();
                     Destroy(resourceCube);
-
                 }
                 else
                 {
-                    //spawns crazy ad
+                    //spawns crazy enemy
                     Debug.Log("crazy ad chosen");
                     Instantiate(crazyBot, gameObject.transform.position, gameObject.transform.rotation);
                     Destroy(resourceCube);
@@ -159,7 +156,7 @@ public class RubyController : MonoBehaviour
             {
 
                 // Debug.Log("running the placement loop");
-                Instantiate(healthCollectable, gameObject.transform.position * Random.Range(1.0f, 0.4f), gameObject.transform.rotation);
+                Instantiate(healthCollectable, gameObject.transform.position * Random.Range(0.4f, 0.4f), gameObject.transform.rotation);
             }
         }
     }
@@ -192,6 +189,8 @@ public class RubyController : MonoBehaviour
         {
             winCondition = 2;
             Destroy(rigidbody2d);
+            Destroy(backgroundm);
+            PlaySound(winning);
         }
         else if (storing == 5 && keyCount == 3)
         {
