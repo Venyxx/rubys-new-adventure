@@ -27,10 +27,12 @@ public class NonPlayerCharacter : MonoBehaviour
             if (timerDisplay < 0)
             {
                 wonDialogBox.SetActive(false);
-
+                RubyController.go = true;
+                Debug.Log(RubyController.go + "tf setting");
                 Leaving();
                 //RubyController.storing = 0;
                 //RubyController.keyCount = 0;
+
 
             }
 
