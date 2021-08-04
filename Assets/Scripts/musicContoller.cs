@@ -11,7 +11,7 @@ public class musicContoller : MonoBehaviour
     void Start()
     {
         Instantiate(musicalStart);
-        winningDialog.SetActive(false);
+        winningDialog.SetActive(true);
     }
 
 
@@ -21,7 +21,7 @@ public class musicContoller : MonoBehaviour
     {
         if (RubyController.winCondition == 2)
         {
-            winningDialog.SetActive(true);
+            winningDialog.SetActive(false);
         }
     }
     public void PlaySound(AudioClip clip)
