@@ -20440,6 +20440,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2659170924797871223, guid: d2de5577fcfac664488fc22f8ac69989,
         type: 3}
+      propertyPath: winning
+      value: 
+      objectReference: {fileID: 8300000, guid: 008aabef0d4a73349aa2619b735e466b, type: 3}
+    - target: {fileID: 2659170924797871223, guid: d2de5577fcfac664488fc22f8ac69989,
+        type: 3}
       propertyPath: crazyBot
       value: 
       objectReference: {fileID: 7577068923841047741, guid: 030d1b6eb16d5894e8680a84494c8edc,
@@ -20454,6 +20459,11 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2659170924797871223, guid: d2de5577fcfac664488fc22f8ac69989,
+        type: 3}
+      propertyPath: backgroundm
+      value: 
+      objectReference: {fileID: 229423088}
     - target: {fileID: 2659170924797871223, guid: d2de5577fcfac664488fc22f8ac69989,
         type: 3}
       propertyPath: damageBurst

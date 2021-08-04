@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class musicContoller : MonoBehaviour
 {
-    public AudioClip musicalStart;
+    //public AudioClip musicalStart;
     public GameObject winningDialog;
-    public AudioClip musicalWin;
+    //public AudioClip musicalWin;
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(musicalStart);
+
         winningDialog.SetActive(true);
     }
 
@@ -23,10 +23,6 @@ public class musicContoller : MonoBehaviour
         {
             winningDialog.SetActive(false);
         }
-    }
-    public void PlaySound(AudioClip clip)
-    {
-        
     }
 }
 
