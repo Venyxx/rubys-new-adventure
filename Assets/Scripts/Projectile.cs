@@ -36,7 +36,7 @@ public class Projectile : MonoBehaviour
 
     }
 
-
+    int fixHim = 0;
 
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -59,6 +59,15 @@ public class Projectile : MonoBehaviour
             
 
             ee.Fix();
+        }
+        EnemyAIController eee = other.collider.GetComponent<EnemyAIController>();
+
+        if (eee != null)
+        {
+            fixHim++;
+            if (fixHim==2){Destroy(eee);}
+
+            
         }
 
         

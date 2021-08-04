@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class musicContoller : MonoBehaviour
 {
-    public GameObject musicalStart;
-    public GameObject musicalWin;
+    public AudioClip musicalStart;
+    public GameObject winningDialog;
+    public AudioClip musicalWin;
     // Start is called before the first frame update
     void Start()
     {
         Instantiate(musicalStart);
+        winningDialog.SetActive(false);
     }
 
 
@@ -19,8 +21,12 @@ public class musicContoller : MonoBehaviour
     {
         if (RubyController.winCondition == 2)
         {
+            Debug.Log("noticed music controller");
             Destroy(musicalStart);
             Instantiate(musicalWin);
+            RubyController.winCondition = 0;
+            winningDialog.SetActive(true);
+
         }
     }
 }

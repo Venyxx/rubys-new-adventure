@@ -27,8 +27,7 @@ public class EnemyAIController : MonoBehaviour
 
         previousXData[0] = 0;
         previousXData[1] = 0;
-        previousYData[0] = 0;
-        previousYData[1] = 0;
+       
     }
 
     void Update()
@@ -42,6 +41,11 @@ public class EnemyAIController : MonoBehaviour
 
 
         transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        Vector2 position = rb.position;
+
+        xstorage = rb.position.x;
+        ystorage = rb.position.y;
+        directionalComparisonX(xstorage);
 
     }
     float xstorage;
@@ -50,15 +54,12 @@ public class EnemyAIController : MonoBehaviour
     float crazyOrientation;
     void FixedUpdate()
     {
-        Vector2 position = rb.position;
-
-        xstorage = rb.position.x;
-        ystorage = rb.position.y;
-        crazyOrientation = ystorage / xstorage ;
+        
+        //crazyOrientation = ystorage / xstorage ;
        // Debug.Log(crazyOrientation);
 
 
-        if ( crazyOrientation >= 5)
+        /*if ( crazyOrientation >= 5)
         {
             // going vertically positive y
             Debug.Log("up");
@@ -82,9 +83,9 @@ public class EnemyAIController : MonoBehaviour
             //negative y
             animator.SetFloat("Move X", 0);
             animator.SetFloat("Move Y", 1);
-        }
-        //directionalComparisonX(xstorage);
-        //directionalComparisonY(ystorage);
+        }*/
+        
+        //directionalComparisonY(ystorage); 
 
 
 
@@ -93,8 +94,28 @@ public class EnemyAIController : MonoBehaviour
     }
     
     //true means vertical false means horizontal
+    void directionalComparisonX (float x)
+    {
+        previousXData[1] = previousXData[0];
+        previousXData[0] = x;
+        //Debug.Log(previousXData[1] - previousXData[0]);
+
+        if (previousXData[0] < previousXData[1])
+        {
+            //target is moving left
+            animator.SetFloat("Move X", -1);
+            animator.SetFloat("Move Y", 0);
+            
+        }
+        else
+        {
+            //target is moving right
+            animator.SetFloat("Move X", 1);
+            animator.SetFloat("Move Y", 0);
+        }
+    }
     
-    void OnCollisionEnter2D(Collision2D other)
+    void OnCollisionStay2D(Collision2D other)
     {
         RubyController player = other.gameObject.GetComponent<RubyController>();
 

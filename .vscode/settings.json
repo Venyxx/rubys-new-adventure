@@ -53,5 +53,6 @@
         "temp/":true,
         "Temp/":true
     },
-    "editor.formatOnType": true
+    "editor.formatOnType": true,
+    "gitdoc.enabled": true
 }

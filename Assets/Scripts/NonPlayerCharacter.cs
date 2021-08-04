@@ -27,8 +27,10 @@ public class NonPlayerCharacter : MonoBehaviour
             if (timerDisplay < 0)
             {
                 wonDialogBox.SetActive(false);
-                
+
                 Leaving();
+                //RubyController.storing = 0;
+                //RubyController.keyCount = 0;
 
             }
 
@@ -51,7 +53,7 @@ public class NonPlayerCharacter : MonoBehaviour
         //runs the next scene
 
         Debug.Log("slowed");
-        SceneManager.LoadScene("LevelTwo");
+        SceneManager.LoadScene("FinalScene");
     }
 
     public void DisplayDialog()

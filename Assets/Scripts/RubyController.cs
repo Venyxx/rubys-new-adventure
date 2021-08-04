@@ -23,6 +23,8 @@ public class RubyController : MonoBehaviour
     float invincibleTimer;
     public int count;
     public TextMeshProUGUI countText;
+    public TextMeshProUGUI keyCountPrinting;
+    public static int keyCount;
     public static int storing;
     public static int cogCount = 5;
     public TextMeshProUGUI cogCountPrint;
@@ -49,8 +51,12 @@ public class RubyController : MonoBehaviour
         currentHealth = maxHealth;
 
         audioSource = GetComponent<AudioSource>();
+        keyCount = 0;
+        cogCount = 5;
+        storing = 0;
         printing();
         cogPrinting();
+        keyPrinting();
     }
 
 
@@ -58,7 +64,9 @@ public class RubyController : MonoBehaviour
     void Update()
     {
 
-
+        keyPrinting();
+        printing();
+        cogPrinting();
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
@@ -104,8 +112,8 @@ public class RubyController : MonoBehaviour
             }
             else if (hit.collider.tag == "Box")
             {
-                int cubeRandStorage  = cubeRand.Next(1,4);
-                if (cubeRandStorage == 100 )
+                int cubeRandStorage = cubeRand.Next(1, 4);
+                if (cubeRandStorage > 1)
                 {
                     Debug.Log("ran collision script for cube & the rand was" + cubeRandStorage);
 
@@ -120,9 +128,9 @@ public class RubyController : MonoBehaviour
                     Instantiate(crazyBot, gameObject.transform.position, gameObject.transform.rotation);
                     Destroy(resourceCube);
                 }
-               
+
             }
-            else { }
+
         }
     }
     public GameObject resourceCube;
@@ -150,8 +158,8 @@ public class RubyController : MonoBehaviour
             for (int x = 0; x < cubeRandStorage; x++)
             {
 
-               // Debug.Log("running the placement loop");
-                Instantiate(healthCollectable, gameObject.transform.position * Random.Range(1.0f, 1.2f), gameObject.transform.rotation);
+                // Debug.Log("running the placement loop");
+                Instantiate(healthCollectable, gameObject.transform.position * Random.Range(1.0f, 0.4f), gameObject.transform.rotation);
             }
         }
     }
@@ -163,20 +171,29 @@ public class RubyController : MonoBehaviour
     }
 
 
-
+    public static bool go = false;
     public void printing()
     {
 
-        if (winCondition < 1)
+        if (go == false)
         {
-            countText.text = "Count: " + storing.ToString() + "/5";
+            countText.text = "Robots: " + storing.ToString() + "/5";
         }
-        else if (winCondition >= 1)
+        else if (go == true)
         {
+            countText.text = "Robots: " + storing.ToString() + "/6";
+        }
 
-            countText.text = "Count: " + storing.ToString() + "/10";
+
+
+
+
+        if (storing == 6 && keyCount == 3)
+        {
+            winCondition = 2;
+            Destroy(rigidbody2d);
         }
-        if (storing == 5)
+        else if (storing == 5 && keyCount == 3)
         {
             //jambi change text
             winCondition = 1;
@@ -184,16 +201,17 @@ public class RubyController : MonoBehaviour
 
 
 
-        }
-        if (storing == 10)
-        {
-            winCondition = 2;
-            Destroy(rigidbody2d);
+
         }
     }
     public void cogPrinting()
     {
-        cogCountPrint.text = "Cog count " + cogCount.ToString();
+        cogCountPrint.text = "Cog count: " + cogCount.ToString();
+    }
+
+    public void keyPrinting()
+    {
+        keyCountPrinting.text = "key count: " + keyCount.ToString() + "/3";
     }
 
     void FixedUpdate()
@@ -203,8 +221,7 @@ public class RubyController : MonoBehaviour
         position.y = position.y + speed * vertical * Time.deltaTime;
 
         rigidbody2d.MovePosition(position);
-        printing();
-        cogPrinting();
+
     }
 
 
