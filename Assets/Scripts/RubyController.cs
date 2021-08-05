@@ -51,7 +51,7 @@ public class RubyController : MonoBehaviour
         animator = GetComponent<Animator>();
 
         currentHealth = maxHealth;
-
+Instantiate(backgroundm);
         audioSource = GetComponent<AudioSource>();
         keyCount = 0;
         cogCount = 5;
