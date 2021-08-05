@@ -146,7 +146,7 @@ Instantiate(backgroundm);
             for (int x = 0; x < cubeRandStorage; x++)
             {
                 //Debug.Log("running the placement loop");
-                Instantiate(cogPickup, gameObject.transform.position * Random.Range(1.0f, 1.2f), gameObject.transform.rotation);
+                Instantiate(cogPickup, gameObject.transform.position * Random.Range(0.4f, 0.4f), gameObject.transform.rotation);
             }
         }
         else if (cogCount > 5)
