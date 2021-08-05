@@ -3055,26 +3055,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 401715224652535323}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1701579492 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2659170924797871220, guid: d2de5577fcfac664488fc22f8ac69989,
-    type: 3}
-  m_PrefabInstance: {fileID: 2659170924863580653}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1701579499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701579492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2455f53525fdd14fb687732da33477a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  winningDialog: {fileID: 3356760127383042284, guid: 62da0020b6bd89344a742b35f187382c,
-    type: 3}
 --- !u!1 &1869678370
 GameObject:
   m_ObjectHideFlags: 0
@@ -3833,6 +3813,12 @@ PrefabInstance:
       propertyPath: cogCountPrint
       value: 
       objectReference: {fileID: 1227180949}
+    - target: {fileID: 2659170924797871223, guid: d2de5577fcfac664488fc22f8ac69989,
+        type: 3}
+      propertyPath: winningDialog
+      value: 
+      objectReference: {fileID: 3356760127383042284, guid: 62da0020b6bd89344a742b35f187382c,
+        type: 3}
     - target: {fileID: 2659170924797871223, guid: d2de5577fcfac664488fc22f8ac69989,
         type: 3}
       propertyPath: keyCountPrinting
