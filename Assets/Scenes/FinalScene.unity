@@ -385,12 +385,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hey!
+  m_text: 'YOU AGAIN?!?
 
-    Help me fix all those broken robots loser!
-
-    And get all
-    the keys while you are at it!'
+    You know what to do!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2546,8 +2543,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 83.27}
-  m_SizeDelta: {x: 0, y: 166.52}
+  m_AnchoredPosition: {x: 0, y: 0.0049819946}
+  m_SizeDelta: {x: 0, y: -0.01001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1335381048
 MonoBehaviour:
