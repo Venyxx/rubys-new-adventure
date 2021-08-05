@@ -5,9 +5,11 @@ using UnityEngine;
 public class CogPickupAddition : MonoBehaviour
 {
     // Start is called before the first frame update
-    void OnCollisionEnter2D(Collision2D other)
+    public AudioClip collectedyeaa;
+    void OnCollisionEnter2D(Collider2D other)
     {
-
+ RubyController controller = other.GetComponent<RubyController>();
+ controller.PlaySound(collectedyeaa);
         RubyController.cogCount++;
         RubyController.cogCount++;
         RubyController.cogCount++;
