@@ -2147,11 +2147,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CogPickup
       objectReference: {fileID: 0}
-    - target: {fileID: 5036215982791017839, guid: 10314b8b9a1477d4c83bedac8e8315fa,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10314b8b9a1477d4c83bedac8e8315fa, type: 3}
 --- !u!4 &1158738035 stripped
