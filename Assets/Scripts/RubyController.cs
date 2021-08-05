@@ -169,6 +169,7 @@ Instantiate(backgroundm);
 
 
     public static bool go = false;
+    public GameObject winningDialog;
     public void printing()
     {
 
@@ -190,6 +191,7 @@ Instantiate(backgroundm);
             winCondition = 2;
             Destroy(rigidbody2d);
             Destroy(backgroundm);
+            Instantiate(winningDialog, rigidbody2d.transform);
             PlaySound(winning);
         }
         else if (storing == 5 && keyCount == 3)
