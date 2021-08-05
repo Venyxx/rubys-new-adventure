@@ -112,7 +112,7 @@ Instantiate(backgroundm);
             else if (hit.collider.tag == "Box")
             {
                 int cubeRandStorage = cubeRand.Next(1, 4);
-                if (cubeRandStorage > 100)
+                if (cubeRandStorage > 1)
                 {
                     Debug.Log("ran collision script for cube & the rand was" + cubeRandStorage);
                     cubeChecking();
