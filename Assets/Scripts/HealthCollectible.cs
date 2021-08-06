@@ -9,6 +9,7 @@ public class HealthCollectible : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        
         RubyController controller = other.GetComponent<RubyController>();
 
         //ParticleSystem ps = GameObject.Find("healthBurst").GetComponent<ParticleSystem>();
@@ -30,6 +31,6 @@ public class HealthCollectible : MonoBehaviour
         }
 
     }
-
-
+ 
 }
+
